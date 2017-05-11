@@ -330,6 +330,7 @@
   	<module>bit-counting</module>
   	<module>find-the-parity-outlier</module>
   	<module>stop-gninnips-my-sdrow</module>
+  	<module>supermarket-queue</module>
   </modules>
   
 </project>
