@@ -1,5 +1,10 @@
 package com.alberto.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class FindOutlier {
 
 	/**
@@ -23,24 +28,45 @@ public class FindOutlier {
 	 * @return
 	 */
 	public static int find(int[] exampleTest1) {
-		
 		int salida = 0;
-		for (int i = 0; i < exampleTest1.length; i ++) {
-			int a0 = exampleTest1[i];
-			int a1 = exampleTest1[i+1];
-			int a2 = exampleTest1[i+2];
-			salida = getNumberNotEqualModAmongOthers(a0, a1, a2);
+		Map<Integer, List<Integer>> mapResults = new ConcurrentHashMap<>();
+		mapResults.put(0, new ArrayList<Integer>());
+		mapResults.put(1, new ArrayList<Integer>());
+		for (int a : exampleTest1) {
+			mapResults.get(Math.abs(a % 2)).add(a);
+			salida = getResultFromMapIfExistCondition(mapResults, 0, 1);
+			if (salida == 0) {
+				salida = getResultFromMapIfExistCondition(mapResults, 1, 0);
+			}
+			if (salida != 0) {
+				break;
+			}
 		}
 		return salida;
 	}
+	
+	//Best solution:
+	// Since we are warned the array may be very large, we should avoid counting values any more than we need to.
 
-	private static int getNumberNotEqualModAmongOthers(int a0, int a1, int a2) {
+    // We only need the first 3 integers to determine whether we are chasing odds or evens.
+    // So, take the first 3 integers and compute the value of Math.abs(i) % 2 on each of them.
+    // It will be 0 for even numbers and 1 for odd numbers.
+    // Now, add them. If sum is 0 or 1, then we are chasing odds. If sum is 2 or 3, then we are chasing evens.
+//    int sum = Arrays.stream(integers).limit(3).map(i -> Math.abs(i) % 2).sum();
+//    int mod = (sum == 0 || sum == 1) ? 1 : 0;
+//
+//    return Arrays.stream(integers).parallel() // call parallel to get as much bang for the buck on a "large" array
+//            .filter(n -> Math.abs(n) % 2 == mod).findFirst().getAsInt();
+
+	private static int getResultFromMapIfExistCondition(Map<Integer, List<Integer>> mapResults, int condition,
+			int notCondition) {
 		int salida = 0;
-		if (Math.abs(a0 % 2) == Math.abs(a1 % 2)) {
-			salida = Math.abs(a2 % 2) == Math.abs(a0 % 2) ? a2 : 0; 
+		if (mapResults.get(notCondition).size() > 1) {
+			if (mapResults.get(condition).size() == 1) {
+				salida = mapResults.get(condition).get(0);
+			}
 		}
 		return salida;
 	}
-
 
 }
