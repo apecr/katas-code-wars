@@ -15,6 +15,11 @@ public class SolutionTest {
 	public void testEmptyArray() {
 		assertEquals(0, Solution.solveSuperMarketQueue(new int[] {}, 1));
 	}
+	
+	@Test
+	public void testOneCustomer() {
+		assertEquals(1, Solution.solveSuperMarketQueue(new int[] {1}, 1));
+	}
 
 	@Test
 	public void testSingleTillManyCustomers() {
