@@ -1,0 +1,11 @@
+{
+  "name": "product-consecutive-fib-numbers",
+  "version": "1.0.0",
+  "description": "Product Fibonacci",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "author": "Alberto Eyo",
+  "license": "ISC"
+}
