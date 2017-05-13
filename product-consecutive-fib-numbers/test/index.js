@@ -10,9 +10,9 @@ describe('', () => {
     //Assert
     assert.deepEqual(arrayResult, [55, 89, true]);
   });
-  it('74049690 into [89, 144, false]', () => {
+  it('5895 into [89, 144, false]', () => {
     //Act
-    var arrayResult = productFib(74049690);
+    var arrayResult = productFib(5895);
     //Assert
     assert.deepEqual(arrayResult, [89, 144, false]);
   });
