@@ -1,0 +1,19 @@
+{
+  "name": "number-expanded-form",
+  "version": "1.0.0",
+  "description": "Kata for Numbers in Expanded Form",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd --recursive"
+  },
+  "keywords": [
+    "Kata",
+    "Javascript",
+    "Node"
+  ],
+  "author": "Alberto Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.3.0"
+  }
+}
