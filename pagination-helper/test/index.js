@@ -40,6 +40,22 @@ describe('Tests for the PaginationHelper. pageCount method', () => {
     //Assert
     expect(numPages).to.equal(2);
   });
+  it('Should have three pages', () => {
+    //Arrange
+    var helper = new PaginationHelper([1, 2, 3, 4, 5, 6, 7, 8], 3);
+    //Act
+    var numPages = helper.pageCount();
+    //Assert
+    expect(numPages).to.equal(3);
+  });
+  it('Should have one page. Items bigger than lentgh', () => {
+    //Arrange
+    var helper = new PaginationHelper([1, 2, 3, 4, 5, 6, 7, 8], 12);
+    //Act
+    var numPages = helper.pageCount();
+    //Assert
+    expect(numPages).to.equal(1);
+  });
   it('Should have zero pages, especial divide by zero case', () => {
     //Arrange
     var helper = new PaginationHelper([1, 2, 3, 4, 5, 6], 0);
@@ -91,6 +107,133 @@ describe('Tests for the PaginationHelper. itemCount method', () => {
     var numItems = helper.itemCount();
     //Assert
     expect(numItems).to.equal(11);
+  });
+});
+
+describe('Tests for the PaginationHelper. pageItemCount method', () => {
+  it('Should say -1 since there are no elements (undefined)', () => {
+    //Arrange
+    var helper = new PaginationHelper(undefined, null);
+    //Act
+    var numItems = helper.pageItemCount(0);
+    //Assert
+    expect(numItems).to.equal(-1);
+  });
+  it('Should say -1 since there are no elements (null)', () => {
+    //Arrange
+    var helper = new PaginationHelper(null, null);
+    //Act
+    var numItems = helper.pageItemCount(0);
+    //Assert
+    expect(numItems).to.equal(-1);
+  });
+  it('Should say -1 since only has one page', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3], 3);
+    //Act
+    var numItems = helper.pageItemCount(1);
+    //Assert
+    expect(numItems).to.equal(-1);
+  });
+  it('Should say -1 since there are not negative pages', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3], 3);
+    //Act
+    var numItems = helper.pageItemCount(-1);
+    //Assert
+    expect(numItems).to.equal(-1);
+  });
+  it('Should say 3 because is the main page', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3], 3);
+    //Act
+    var numItems = helper.pageItemCount(0);
+    //Assert
+    expect(numItems).to.equal(3);
+  });
+  it('Should say 2 because is the second page', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5], 3);
+    expect(helper.pageCount()).to.equal(2);
+    //Act
+    var numItems = helper.pageItemCount(1);
+    //Assert
+    expect(numItems).to.equal(2);
+  });
+  it('Should say 3 because is the second page and all the pages have the same elements', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6], 3);
+    //Act
+    var numItems = helper.pageItemCount(1);
+    //Assert
+    expect(numItems).to.equal(3);
+  });
+  it('Should say 3 because is the second page. Every page has three elements', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageItemCount(1);
+    //Assert
+    expect(numItems).to.equal(3);
+  });
+});
+
+describe('Tests for the PaginationHelper. pageIndex method', () => {
+  it('Should return 0 because is the 0 index', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageIndex(0);
+    //Assert
+    expect(numItems).to.equal(0);
+  });
+  it('Should return 0 because is the 1 index 3 itemsPerPage', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageIndex(1);
+    //Assert
+    expect(numItems).to.equal(0);
+  });
+  it('Should return 0 because is the 2 index 3 itemsPerPage', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageIndex(2);
+    //Assert
+    expect(numItems).to.equal(0);
+  });
+  it('Should return 1 because is the 3 index 3 itemsPerPage', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageIndex(3);
+    //Assert
+    expect(numItems).to.equal(1);
+  });
+  it('Should return -1 is too big the index', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageIndex(100);
+    //Assert
+    expect(numItems).to.equal(-1);
+  });
+  it('Should return -1 is the index is negative', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageIndex(-4);
+    //Assert
+    expect(numItems).to.equal(-1);
+  });
+  it('Should return -4', () => {
+    //Arrange
+    var helper = new PaginationHelper([1,2,3,4,5,6,7,8,9,10], 3);
+    //Act
+    var numItems = helper.pageIndex(9);
+    //Assert
+    expect(numItems).to.equal(3);
   });
 });
 
