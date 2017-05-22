@@ -1,0 +1,19 @@
+{
+  "name": "pagination-helper",
+  "version": "1.0.0",
+  "description": "Kata Pagination Helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "Kata",
+    "javascript"
+  ],
+  "author": "Alberto Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
+}
