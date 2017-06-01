@@ -1,0 +1,19 @@
+{
+  "name": "the-observed-pin",
+  "version": "1.0.0",
+  "description": "Kata the observed pin https://www.codewars.com/kata/5263c6999e0f40dee200059d/train/javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "Kata",
+    "algorithms"
+  ],
+  "author": "Alberto Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "mocha": "^3.4.2"
+  }
+}
