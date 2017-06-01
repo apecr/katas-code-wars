@@ -1,0 +1,22 @@
+{
+  "name": "is-my-friend-cheating",
+  "version": "1.0.0",
+  "description": "Kata is my friend cheating https://www.codewars.com/kata/5547cc7dcad755e480000004/train/javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "kata",
+    "puzzles",
+    "fundamentals",
+    "numbers",
+    "mathematics"
+  ],
+  "author": "Alberto Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "mocha": "^3.4.2"
+  }
+}
