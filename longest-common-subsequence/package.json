@@ -1,0 +1,21 @@
+{
+  "name": "longest-common-subsequence",
+  "version": "1.0.0",
+  "description": "Longest common subsequence kata (https://www.codewars.com/kata/longest-common-subsequence/train/javascript)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "Kata",
+    "Algorithms",
+    "Strings",
+    "Search"
+  ],
+  "author": "Alberto Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "mocha": "^3.4.2"
+  }
+}
