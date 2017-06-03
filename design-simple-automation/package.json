@@ -1,0 +1,25 @@
+{
+  "name": "design-simple-automation",
+  "version": "1.0.0",
+  "description": "Design a Simple Automation (Finite State Machine)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "kata",
+    "algorithms",
+    "state",
+    "machines",
+    "computational",
+    "science",
+    "design",
+    "patterns"
+  ],
+  "author": "Albeto Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "mocha": "^3.4.2"
+  }
+}
