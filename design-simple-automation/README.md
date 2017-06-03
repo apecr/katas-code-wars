@@ -22,7 +22,7 @@ var a = new Automaton();
 var isAccepted = a.readCommands(["1", "0", "0", "1", "0"]);
 ```
 
-We make these transitions based on the input of `["1", "0", "0", "1", "0"],
+We make these transitions based on the input of `["1", "0", "0", "1", "0"]`,
 
 ```
 1 q1 -> q2
@@ -33,7 +33,7 @@ We make these transitions based on the input of `["1", "0", "0", "1", "0"],
 ```
 We end in q3, which is not our accept state, so return false.
 
-The input of ["1", "0", "0", "1", "0"]` would cause us to return false, as we would end in q3.
+The input of `["1", "0", "0", "1", "0"]` would cause us to return false, as we would end in q3.
 
 I have started you off with the bare bones of the Automaton object.
 
@@ -61,7 +61,7 @@ Here are some resources on DFAs (the automaton this Kata asks you to create.)
 
 * [Dfa-definitions][1]
 * [Deterministic_finite_automaton][2]
-* [Deterministic_finite_automaton][3]
+* [Automata][3]
 
 [1]: http://www.cs.odu.edu/~toida/nerzic/390teched/regular/fa/dfa-definitions.html
 [2]: http://en.wikipedia.org/wiki/Deterministic_finite_automaton
