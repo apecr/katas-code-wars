@@ -1,0 +1,22 @@
+{
+  "name": "hamming-numbers",
+  "version": "1.0.0",
+  "description": "Hamming Numbers Kata (https://www.codewars.com/kata/526d84b98f428f14a60008da/train/javascript)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "Kata",
+    "Algorithms",
+    "Arithmetic",
+    "Mathematics",
+    "Numbers"
+  ],
+  "author": "Alberot Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
