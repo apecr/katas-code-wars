@@ -1,0 +1,18 @@
+{
+  "name": "strip-comments",
+  "version": "1.0.0",
+  "description": "Kata strip comments",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "Kata"
+  ],
+  "author": "Alberto Eyo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
